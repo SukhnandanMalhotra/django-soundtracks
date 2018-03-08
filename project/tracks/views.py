@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.urls import reverse, reverse_lazy
-from django.http import HttpResponse, Http404, HttpResponseRedirect,
-from .forms.py import TrackForm
+from django.http import HttpResponse, Http404, HttpResponseRedirect
+from .forms import TrackForm
 from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Tracks
 

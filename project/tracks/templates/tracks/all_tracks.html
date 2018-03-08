@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="{% url 'audio-form-upload' %}">Audio Form Upload</a>
+<p>Uploaded Files:</p>
+<ul>
+    {% for obj in audiofiles %}
+      <li>
+        <a href="{{ obj.audio_file.url }}">{{ obj.audio_file.name }}</a>
+        <small>(Uploaded at: {{ obj.uploaded_at }})</small>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
