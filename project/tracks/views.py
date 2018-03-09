@@ -11,6 +11,7 @@ class AllTracksView(ListView):
     template_name = 'tracks/all_tracks.html'
     context_object_name = 'audiofiles'
 
+
 class TrackUploadView(CreateView):
     form_class = TrackForm
     template_name = 'tracks/track_upload.html'
@@ -18,4 +19,4 @@ class TrackUploadView(CreateView):
     def form_valid(self, form):
         audio = form.save(commit=False)
         audio.save()
-        return  HttpResponseRedirect(reverse('home'))
+        return HttpResponseRedirect(reverse('home'))
