@@ -13,10 +13,12 @@ class AllTracksView(ListView):
 
 
 class TrackUploadView(CreateView):
+    success_url=reverse_lazy('home')
     form_class = TrackForm
     template_name = 'tracks/track_upload.html'
+    context_object_name = 'form'
 
-    def form_valid(self, form):
-        audio = form.save(commit=False)
-        audio.save()
-        return HttpResponseRedirect(reverse('home'))
+    # def form_valid(self, form):
+    #     audio = form.save(commit=False)
+    #     audio.save()
+    #     return HttpResponseRedirect(reverse('home'))
